@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import initialContacts from '../../contacts.json'
 import ContactList from "../ContactList/ContactList";
 import SearchBox from "../SearchBox/SearchBox";
 import ContactForm from '../ContactForm/ContactForm'
+import { selectNameFilter } from "../../redux/filtersSlice";
 import "./App.css";
 
 export default function App() {
@@ -14,7 +16,9 @@ export default function App() {
     }
     return initialContacts;
   });
-  const [filter, setFilter] = useState('');
+
+// ?
+  const filter = useSelector(selectNameFilter);
 
   const addContact = (newContact) => {
     setContacts((prevContacts) => {
@@ -29,7 +33,8 @@ export default function App() {
       )
     });
   };
-
+  
+// ?
   const visibleContacts = contacts.filter(contact => contact.name.toLocaleLowerCase().includes(filter.toLocaleLowerCase()));
 
   useEffect(() => {
@@ -40,7 +45,7 @@ export default function App() {
     <div>
       <h1>Phonebook</h1>
       <ContactForm onAdd={addContact} />
-      <SearchBox value={filter} onFilter={setFilter} />
+      <SearchBox />
       <ContactList contacts={visibleContacts} onDelete={deleteContact} />
     </div>
   )
