@@ -19,6 +19,7 @@ export default function App() {
 
 // ?
   const filter = useSelector(selectNameFilter);
+  console.log(filter);
 
   const addContact = (newContact) => {
     setContacts((prevContacts) => {
