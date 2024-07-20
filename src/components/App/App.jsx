@@ -1,4 +1,3 @@
-// import { useState, useEffect } from "react";
 import ContactList from "../ContactList/ContactList";
 import SearchBox from "../SearchBox/SearchBox";
 import ContactForm from '../ContactForm/ContactForm'
@@ -8,20 +7,20 @@ import "./App.css";
 
 export default function App() {
 
-  const contacts = useSelector(state => state.contacts.items);
+  // const contacts = useSelector(state => state.contacts.items);
 
   return (
     <div>
       <h1>Phonebook</h1>
       <ContactForm onAdd={addContact} />
-      {/* <SearchBox value={filter} onFilter={setFilter} /> */}
-      <ContactList contacts={contacts} />
+      <SearchBox />
+      <ContactList />
     </div>
   )
 
   // const [contacts, setContacts] = useState(() => {
   //   const savedContacts = window.localStorage.getItem('saved-contacts');
-    
+
   //   if (savedContacts !== null) {
   //     console.log(JSON.parse(savedContacts));
   //     return JSON.parse(savedContacts)

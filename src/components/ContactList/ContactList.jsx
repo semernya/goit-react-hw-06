@@ -4,9 +4,12 @@ import css from './ContactList.module.css'
 import { deleteContact } from '../../redux/contactsSlice';
 
 export default function ContactList() {
-    const contacts = useSelector(state => state.contacts.items);
 
     const dispatch = useDispatch();
+    const contacts = useSelector(state => state.contacts.items);
+    const filter = useSelector(state => state.name);
+    // const visibleContacts = contacts.filter(contact => contact.name.includes(filter));
+
     const handleDelete = () => {
         dispatch(deleteContact());
     };
