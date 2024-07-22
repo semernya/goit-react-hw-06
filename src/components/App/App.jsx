@@ -1,13 +1,10 @@
 import ContactList from "../ContactList/ContactList";
 import SearchBox from "../SearchBox/SearchBox";
 import ContactForm from '../ContactForm/ContactForm'
-import { useSelector } from "react-redux";
 import { addContact } from "../../redux/contactsSlice";
 import "./App.css";
 
 export default function App() {
-
-  // const contacts = useSelector(state => state.contacts.items);
 
   return (
     <div>
@@ -28,20 +25,7 @@ export default function App() {
   //   return initContacts;
   // });
   // const [filter, setFilter] = useState('');
-
-  // const addContact = (newContact) => {
-  //   setContacts((prevContacts) => {
-  //     return [...prevContacts, newContact];
-  //   });
-  // };
-
-  // const deleteContact = (contactId) => {
-  //   setContacts((prevContacts) => {
-  //     return prevContacts.filter((contact) =>
-  //       contact.id !== contactId
-  //     )
-  //   });
-  // };
+  
 
   // const visibleContacts = contacts.filter(contact => contact.name.toLocaleLowerCase().includes(filter.toLocaleLowerCase()));
   // useEffect(() => {
