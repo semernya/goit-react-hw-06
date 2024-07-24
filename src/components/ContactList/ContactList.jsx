@@ -15,8 +15,6 @@ export default function ContactList() {
         return contact.name.toLowerCase().includes(filter.toLowerCase());
     });
 
-    console.log(contacts, visibleContacts);
-
     return (
         <ul className={css.list}>
             {visibleContacts.map((contact) => (
